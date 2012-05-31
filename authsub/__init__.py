@@ -25,7 +25,7 @@ class FileStore(BaseStore):
                 for line in r.readlines()]))
     
     def save(self):
-        content = '\n'.join(['%s %s' % k, v for k, v in self.jar.iteritems()])
+        content = '\n'.join(['%s %s' % (k, v) for k, v in self.jar.iteritems()])
         with open(self.filename, 'w') as r:
             r.write(content)
 
